@@ -15,15 +15,13 @@ holiday_hash = {
 }
 
 def all_holidays_with_bbq(holiday_hash)
-  second_array = []
-  holiday_hash.each do |season, second_hash|
-    second_hash.each do |holiday, array|
+  holiday_hash.map do |season, second_hash|
+    second_hash.map do |holiday, array|
       if array.include?("BBQ")
-        second_array << holiday
+        holiday
       end
     end
   end
-  print second_array
 end
 
 all_holidays_with_bbq(holiday_hash)
